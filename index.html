@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Name - Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate On Scroll CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #112240;
+            --text-light: #ccd6f6;
+            --text-dark: #8892b0;
+            --accent-color: #64ffda;
+            --card-bg: rgba(17, 34, 64, 0.75);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .navbar {
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            transition: top 0.3s;
+        }
+
+        .navbar-brand, .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover, .navbar-brand:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--accent-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        #home {
+           text-align: left;
+        }
+
+        .hero-subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-tagline {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        
+        .btn-custom {
+            color: var(--accent-color);
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            padding: 12px 25px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--accent-color);
+        }
+
+        /* About Section */
+        .about-text {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+           margin-bottom: 1.5rem;
+        }
+
+        /* Experience and Education Cards */
+        .timeline-card {
+            background: var(--card-bg);
+            border: 1px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+        }
+
+        .card-title-custom {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .card-subtitle-custom {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .card-text-custom ul {
+            padding-left: 20px;
+        }
+        
+        .card-text-custom li {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects */
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+        }
+
+        .project-card .card-body {
+            padding: 1.75rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-title {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        .project-text {
+            color: var(--text-dark);
+            flex-grow: 1;
+        }
+        
+        .project-tags {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .project-tags .badge {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--accent-color);
+            font-weight: 500;
+            padding: 0.5em 0.75em;
+        }
+
+        /* Skills */
+        .skill-item {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        .skill-category-title {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact */
+        #contact {
+            text-align: center;
+        }
+        
+        .contact-text {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+        
+        .social-icons a {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Side social links */
+        .side-links {
+            position: fixed;
+            bottom: 0;
+            left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .side-links::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 90px;
+            background-color: var(--text-dark);
+        }
+        
+        .side-links a {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .side-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .side-links {
+                display: none;
+            }
+            .hero-title { font-size: 2.5rem; }
+            .hero-tagline { font-size: 1.8rem; }
+        }
+
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">RN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Side Social Links -->
+    <div class="side-links d-none d-lg-flex">
+        <a href="https://github.com/placeholder" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:placeholder@example.com"><i class="fas fa-envelope"></i></a>
+        <a href="tel:123-456-7890"><i class="fas fa-phone"></i></a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Home/Hero Section -->
+        <section id="home">
+            <div class="row align-items-center">
+                <div class="col">
+                    <p class="hero-subtitle" data-aos="fade-up">Hi, my name is</p>
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">Random Person.</h1>
+                    <h2 class="hero-tagline" data-aos="fade-up" data-aos-delay="200">I do random things.</h2>
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <a href="mailto:placeholder@example.com" class="btn-custom" data-aos="fade-up" data-aos-delay="400">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                    <div class="about-text" data-aos="fade-up" data-aos-delay="100">
+                         <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <p>
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title" data-aos="fade-up">Work Experience</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="timeline-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="card-title-custom">Job Title A <span class="text-white-50">@ Company A</span></h4>
+                        <p class="card-subtitle-custom">Jan 2020 - Dec 2021</p>
+                        <div class="card-text-custom">
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
+                                <li>Nisi ut aliquip ex ea commodo consequat.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-card" data-aos="fade-up" data-aos-delay="200">
+                         <h4 class="card-title-custom">Job Title B <span class="text-white-50">@ Company B</span></h4>
+                        <p class="card-subtitle-custom">Jan 2018 - Dec 2019</p>
+                        <div class="card-text-custom">
+                            <ul>
+                                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</li>
+                                <li>Eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Education -->
+             <h2 class="section-title mt-5" data-aos="fade-up">Education</h2>
+             <div class="row">
+                <div class="col-md-12">
+                    <div class="timeline-card" data-aos="fade-up" data-aos-delay="100">
+                         <h4 class="card-title-custom">Degree A</h4>
+                         <p class="card-subtitle-custom">University A | 2020 - 2024</p>
+                         <p class="card-text-custom">Grade: A</p>
+                    </div>
+                    <div class="timeline-card" data-aos="fade-up" data-aos-delay="200">
+                         <h4 class="card-title-custom">Degree B</h4>
+                         <p class="card-subtitle-custom">University B | 2016 - 2020</p>
+                         <p class="card-text-custom">Grade: B</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title" data-aos="fade-up">Projects</h2>
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="project-title">Project Alpha</h5>
+                            <p class="project-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="project-tags">
+                                <span class="badge">Tech1</span> <span class="badge">Tech2</span> <span class="badge">Tech3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="project-title">Project Beta</h5>
+                            <p class="project-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <div class="project-tags">
+                                <span class="badge">Tech4</span> <span class="badge">Tech5</span> <span class="badge">Tech6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="project-title">Project Gamma</h5>
+                            <p class="project-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                             <div class="project-tags">
+                                <span class="badge">Tech7</span> <span class="badge">Tech8</span> <span class="badge">Tech9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title d-inline-block" data-aos="fade-up">Technical Skills</h2>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="skill-category-title">Programming & Libraries</h4>
+                        <div class="skill-item">Skill1</div>
+                        <div class="skill-item">Skill2</div>
+                        <div class="skill-item">Skill3</div>
+                        <div class="skill-item">Skill4</div>
+                        <div class="skill-item">Skill5</div>
+                        <div class="skill-item">Skill6</div>
+
+                        <h4 class="skill-category-title">Technical Expertise</h4>
+                        <div class="skill-item">Expertise1</div>
+                        <div class="skill-item">Expertise2</div>
+                        <div class="skill-item">Expertise3</div>
+                        <div class="skill-item">Expertise4</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <p class="contact-text" data-aos="fade-up" data-aos-delay="100">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <a href="mailto:placeholder@example.com" class="btn-custom" data-aos="fade-up" data-aos-delay="200">Say Hello</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-icons mb-2">
+                <a href="https://github.com/placeholder" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:placeholder@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:123-456-7890"><i class="fas fa-phone"></i></a>
+            </div>
+            <p>Designed & Built by Random Person</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Animate On Scroll JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            mirror: false
+        });
+
+        // Navbar shrink effect
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Downscroll
+                navbar.style.top = '-80px';
+            } else {
+                // Upscroll
+                navbar.style.top = '0';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+    </script>
+</body>
+</html>
