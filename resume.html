@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Kumar - Resume</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Make the embedded PDF use full viewport height under navbar */
+        .pdf-container { padding-top: 80px; }
+        .pdf-frame { width: 100%; height: calc(100vh - 100px); border: none; }
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <iframe class="pdf-frame" src="assets/resume/harsh.pdf"></iframe>
+        <div style="text-align:center; margin: 12px 0; color: var(--text-light);">
+            If the PDF doesn't render, <a href="assets/resume/harsh.pdf" download style="color:var(--accent-color);">download the resume</a>.
+        </div>
+    </div>
+</body>
+</html>
