@@ -97,6 +97,12 @@
     <script src="assets/js/main.js"></script>
     <script>
         (function() {
+            // Check if we should use iframe fallback immediately for Edge browsers
+            function shouldUseIframeFallback() {
+                var isEdge = /Edg\//.test(navigator.userAgent);
+                return isEdge; // Use iframe for all Edge browsers due to PDF rendering issues
+            }
+
             // If <object> fails to load PDF in some browsers/sizes, replace it with an iframe fallback
             function needsFallback(obj) {
                 try {
@@ -116,27 +122,43 @@
                 } catch (e) {
                     return true;
                 }
-                // Default: attempt to show the object; if user agent is Edge and height is small, prefer iframe
-                var isEdge = /Edg\//.test(navigator.userAgent);
-                if (isEdge && window.innerHeight < 700) return true;
                 return false;
             }
 
-            document.addEventListener('DOMContentLoaded', function() {
-                var obj = document.querySelector('object.pdf-frame');
-                if (needsFallback(obj)) {
-                    var wrapper = document.querySelector('.pdf-viewer-wrap');
-                    if (!wrapper) return;
-                    var iframe = document.createElement('iframe');
-                    iframe.className = 'pdf-frame';
-                    iframe.setAttribute('src', 'assets/resume/harsh.pdf');
-                    iframe.setAttribute('aria-label', 'Resume PDF iframe fallback');
-                    iframe.setAttribute('loading', 'lazy');
-                    // replace object with iframe
-                    wrapper.innerHTML = '';
-                    wrapper.appendChild(iframe);
-                }
-            });
+            function replacePdfWithIframe() {
+                var wrapper = document.querySelector('.pdf-viewer-wrap');
+                if (!wrapper) return;
+                var iframe = document.createElement('iframe');
+                iframe.className = 'pdf-frame';
+                iframe.setAttribute('src', 'assets/resume/harsh.pdf');
+                iframe.setAttribute('aria-label', 'Resume PDF iframe fallback');
+                iframe.setAttribute('loading', 'lazy');
+                // replace object with iframe
+                wrapper.innerHTML = '';
+                wrapper.appendChild(iframe);
+            }
+
+            // For Edge browsers, use iframe immediately to avoid rendering issues
+            if (shouldUseIframeFallback()) {
+                document.addEventListener('DOMContentLoaded', function() {
+                    replacePdfWithIframe();
+                });
+            } else {
+                // For other browsers, check if fallback is needed after load
+                document.addEventListener('DOMContentLoaded', function() {
+                    var obj = document.querySelector('object.pdf-frame');
+                    if (needsFallback(obj)) {
+                        replacePdfWithIframe();
+                    } else {
+                        // Give the object a chance to load, then check again
+                        setTimeout(function() {
+                            if (needsFallback(obj)) {
+                                replacePdfWithIframe();
+                            }
+                        }, 1000);
+                    }
+                });
+            }
         })();
     </script>
 </body>
