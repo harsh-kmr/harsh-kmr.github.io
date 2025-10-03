@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Visualizations | Harsh Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2 {
+            font-family: 'Source Serif 4', serif;
+        }
+        .link-style {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #dbeafe;
+            transition: border-bottom-color 0.2s;
+        }
+        .link-style:hover {
+            border-bottom-color: #2563eb;
+        }
+        .visualization-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .visualization-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 leading-relaxed">
+    <!-- Header Navigation -->
+    <nav class="bg-white shadow-sm border-b mb-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex-shrink-0">
+                    <img src="assets/images/logo-dark.png" alt="Logo" class="h-10 w-auto">
+                </a>
+                <div class="flex space-x-6">
+                    <a href="projects.html" class="link-style">
+                        <i class="fas fa-folder-open mr-1"></i>Projects
+                    </a>
+                    <a href="visualizations.html" class="link-style">
+                        <i class="fas fa-chart-bar mr-1"></i>Visualizations
+                    </a>
+                    <a href="assets/resume/harsh.pdf" class="link-style" download>
+                        <i class="fas fa-file-pdf mr-1"></i>Resume PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
+        <main>
+            <!-- Header Section -->
+            <section class="mb-12">
+                <h1 class="text-4xl font-bold mb-4 text-gray-900">Data Science Visualizations</h1>
+                
+                <!-- Project Links -->
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <a href="https://github.com/harsh-kmr/ds200-data-science-visualization" 
+                       class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                        <i class="fab fa-github mr-2"></i>
+                        View on GitHub
+                    </a>
+                    <a href="https://colab.research.google.com/github/harsh-kmr/ds200-data-science-visualization/blob/main/visualizations.ipynb" 
+                       class="inline-flex items-center px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">
+                        <i class="fas fa-play mr-2"></i>
+                        Open in Colab
+                    </a>
+                </div>
+
+                <!-- Dataset Info -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8">
+                    <h3 class="font-semibold text-blue-900 mb-2">Dataset</h3>
+                    <p class="text-blue-800 mb-2">Area, Population and Income of G-20 Countries upto 2013</p>
+                    <p class="text-sm text-blue-700">
+                        <strong>Source:</strong> 
+                        <a href="https://www.data.gov.in/resource/area-population-and-income-g-20-countries-upto-2013#api" 
+                           class="link-style">data.gov.in</a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Visualizations Section -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold mb-8 text-gray-900">Visualizations & Analysis</h2>
+                
+                <!-- Visualization 1: GDP Over Time -->
+                <div class="visualization-card bg-white border rounded-lg p-6 mb-8 shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                        <i class="fas fa-chart-line mr-2 text-blue-600"></i>
+                        GDP Over Time (2010-2013)
+                    </h3>
+                    <div class="mb-4">
+                        <img src="https://raw.githubusercontent.com/harsh-kmr/ds200-data-science-visualization/main/plots/GDP%20over%20Time%20(2010%E2%80%932013).png" 
+                             alt="GDP over Time 2010-2013" 
+                             class="w-full rounded-lg border">
+                    </div>
+                    <div class="prose max-w-none">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Insights:</h4>
+                        <ul class="text-gray-700 space-y-1">
+                            <li><strong>China:</strong> Rapid expansion from ~$6,000B to ~$9,000B (+50%) - steepest growth rate</li>
+                            <li><strong>USA:</strong> Stable growth from ~$14,500B to ~$16,200B (+11.7%) - maintained largest economy</li>
+                            <li><strong>Japan:</strong> Economic contraction from ~$5,500B to ~$5,000B (-9%) - post-2011 tsunami impact</li>
+                            <li><strong>India:</strong> Modest but steady growth from ~$1,600B to ~$2,000B (+25%)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Visualization 2: Box Plots -->
+                <div class="visualization-card bg-white border rounded-lg p-6 mb-8 shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                        <i class="fas fa-chart-bar mr-2 text-green-600"></i>
+                        Box Plots: Population, GDP, and GDP per Capita (2013)
+                    </h3>
+                    <div class="mb-4">
+                        <img src="https://raw.githubusercontent.com/harsh-kmr/ds200-data-science-visualization/main/plots/Box%20Plots%20of%20Population%2C%20GDP%2C%20and%20GDP%20per%20Capita%20(2013).png" 
+                             alt="Box Plots of Economic Indicators" 
+                             class="w-full rounded-lg border">
+                    </div>
+                    <div class="prose max-w-none">
+                        <h4 class="font-semibold text-gray-800 mb-2">Distribution Analysis:</h4>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
+                            <div>
+                                <h5 class="font-medium text-gray-800">Population</h5>
+                                <p>Right-skewed distribution with China and India as extreme outliers (~1.3B each)</p>
+                            </div>
+                            <div>
+                                <h5 class="font-medium text-gray-800">GDP</h5>
+                                <p>USA ($16.5T) and China ($9T) dominate, with most countries clustering in lower ranges</p>
+                            </div>
+                            <div>
+                                <h5 class="font-medium text-gray-800">GDP per Capita</h5>
+                                <p>Widest variation (~$10K-42K), revealing vast differences in living standards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualization 3: Scatter Plot -->
+                <div class="visualization-card bg-white border rounded-lg p-6 mb-8 shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                        <i class="fas fa-chart-scatter mr-2 text-purple-600"></i>
+                        GDP vs Population (Top 5 Countries by GDP, 2013)
+                    </h3>
+                    <div class="mb-4">
+                        <img src="https://raw.githubusercontent.com/harsh-kmr/ds200-data-science-visualization/main/plots/GDP%20vs%20Population%20(Top%205%20Countries%20by%20GDP%2C%202013).png" 
+                             alt="GDP vs Population Scatter Plot" 
+                             class="w-full rounded-lg border">
+                    </div>
+                    <div class="prose max-w-none">
+                        <h4 class="font-semibold text-gray-800 mb-2">Country Profiles & Insights:</h4>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-sm">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-3 py-2 text-left font-medium text-gray-800">Country</th>
+                                        <th class="px-3 py-2 text-left font-medium text-gray-800">Population</th>
+                                        <th class="px-3 py-2 text-left font-medium text-gray-800">GDP</th>
+                                        <th class="px-3 py-2 text-left font-medium text-gray-800">GDP per Capita</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-700">
+                                    <tr class="border-t">
+                                        <td class="px-3 py-2 font-medium">USA</td>
+                                        <td class="px-3 py-2">320M</td>
+                                        <td class="px-3 py-2">$16,200B</td>
+                                        <td class="px-3 py-2">~$50,600</td>
+                                    </tr>
+                                    <tr class="border-t">
+                                        <td class="px-3 py-2 font-medium">China</td>
+                                        <td class="px-3 py-2">1,360M</td>
+                                        <td class="px-3 py-2">$9,000B</td>
+                                        <td class="px-3 py-2">~$6,600</td>
+                                    </tr>
+                                    <tr class="border-t">
+                                        <td class="px-3 py-2 font-medium">Japan</td>
+                                        <td class="px-3 py-2">127M</td>
+                                        <td class="px-3 py-2">$5,100B</td>
+                                        <td class="px-3 py-2">~$40,100</td>
+                                    </tr>
+                                    <tr class="border-t">
+                                        <td class="px-3 py-2 font-medium">Germany</td>
+                                        <td class="px-3 py-2">81M</td>
+                                        <td class="px-3 py-2">$3,700B</td>
+                                        <td class="px-3 py-2">~$45,700</td>
+                                    </tr>
+                                    <tr class="border-t">
+                                        <td class="px-3 py-2 font-medium">France</td>
+                                        <td class="px-3 py-2">66M</td>
+                                        <td class="px-3 py-2">$2,800B</td>
+                                        <td class="px-3 py-2">~$42,400</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-4 text-gray-700">
+                            <strong>Key Finding:</strong> No linear relationship between population and GDP. 
+                            Developed economies achieve higher efficiency (GDP per capita) while emerging economies rely on scale.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Details Section -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-900">Technical Implementation</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Tools & Technologies -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold mb-4 text-gray-900">
+                            <i class="fas fa-tools mr-2"></i>Tools & Technologies
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fab fa-python mr-2 text-blue-600"></i>Python</li>
+                            <li><i class="fas fa-chart-bar mr-2 text-orange-600"></i>Matplotlib</li>
+                            <li><i class="fas fa-table mr-2 text-green-600"></i>Pandas</li>
+                            <li><i class="fas fa-chart-area mr-2 text-purple-600"></i>Seaborn</li>
+                            <li><i class="fas fa-book mr-2 text-red-600"></i>Jupyter Notebook</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project Structure -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold mb-4 text-gray-900">
+                            <i class="fas fa-folder-tree mr-2"></i>Project Structure
+                        </h3>
+                        <pre class="text-sm text-gray-700 bg-white p-3 rounded border">ds200-data-science-visualization/
+├── visualizations.ipynb
+├── Area, Population And Income...csv
+├── readme.md
+└── plots/
+    ├── Box Plots...png
+    ├── GDP over Time...png
+    └── GDP vs Population...png</pre>
+                    </div>
+                </div>
+
+                <!-- Repository Information -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6 mt-6">
+                    <h3 class="text-lg font-semibold mb-3 text-blue-900">
+                        <i class="fab fa-github mr-2"></i>Repository Information
+                    </h3>
+                    <p class="text-blue-800 mb-4">
+                        This project demonstrates basic data analysis and visualization techniques as part of the DS200 Data Science course assignment.
+                        The complete source code, datasets, and generated plots are available in the public GitHub repository.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://github.com/harsh-kmr/ds200-data-science-visualization" 
+                           class="inline-flex items-center px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm">
+                            <i class="fab fa-github mr-2"></i>View Repository
+                        </a>
+                        <a href="https://colab.research.google.com/github/harsh-kmr/ds200-data-science-visualization/blob/main/visualizations.ipynb" 
+                           class="inline-flex items-center px-3 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-colors text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i>Run in Colab
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

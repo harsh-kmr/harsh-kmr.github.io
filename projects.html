@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Harsh Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2 {
+            font-family: 'Source Serif 4', serif;
+        }
+        .link-style {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #dbeafe;
+            transition: border-bottom-color 0.2s;
+        }
+        .link-style:hover {
+            border-bottom-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 leading-relaxed">
+    <!-- Header Navigation -->
+    <nav class="bg-white shadow-sm border-b mb-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="flex-shrink-0">
+                    <img src="assets/images/logo-dark.png" alt="Logo" class="h-10 w-auto">
+                </a>
+                <div class="flex space-x-6">
+                    <a href="projects.html" class="link-style">
+                        <i class="fas fa-folder-open mr-1"></i>Projects
+                    </a>
+                    <a href="visualizations.html" class="link-style">
+                        <i class="fas fa-chart-bar mr-1"></i>Visualizations
+                    </a>
+                    <a href="assets/resume/harsh.pdf" class="link-style" download>
+                        <i class="fas fa-file-pdf mr-1"></i>Resume PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
+        <main>
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 border-b pb-2 mb-6 relative">
+                    Research & Thesis
+                    <div class="absolute bottom-0 left-0 w-24 h-1 bg-blue-500"></div>
+                </h2>
+                <div class="space-y-8">
+                    <div class="project-item">
+                        <p class="font-semibold text-lg text-gray-800">Federated Learning in Heterogeneous Data</p>
+                        <p class="text-gray-600 text-sm">M.Tech Thesis • Supervisor: Vaanathi Sundaresan, Biomedia Lab, IISc Bangalore</p>
+                        <p class="text-gray-500 italic mt-1">Ongoing</p>
+                        <p class="text-gray-700 mt-2">Aims to improve the performance in Heterogenous setting like missing class and imbalanced data.</p>
+                        <div class="mt-2 space-x-2">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Python</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">PyTorch</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Federated Learning</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Medical Imaging</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 border-b pb-2 mb-6 relative">
+                    Projects
+                    <div class="absolute bottom-0 left-0 w-24 h-1 bg-blue-500"></div>
+                </h2>
+                <div class="space-y-8">
+                    <!-- Project Item -->
+                    <div class="project-item">
+                        <p class="font-semibold text-lg text-gray-800">Test-Time Adaptation for Medical Imaging</p>
+                        <p class="text-gray-600 text-sm">Academic Project</p>
+                        <p class="text-gray-700 mt-2">Developed test-time adaptation pipelines using TENT and MMD Loss, achieving +18% accuracy improvement and +0.20 F1 score on OrganMNIST datasets under domain shifts.</p>
+                        <div class="mt-2 space-x-2">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">PyTorch</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Computer Vision</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Domain Adaptation</span>
+                        </div>
+                    </div>
+                    <!-- Project Item -->
+                    <div class="project-item">
+                        <p class="font-semibold text-lg text-gray-800">AI-Powered Driver Monitoring System</p>
+                        <p class="text-gray-600 text-sm">Academic Project</p>
+                        <p class="text-gray-700 mt-2">Real-time drowsiness and distraction detection system using MediaPipe facial landmarks and Decision Tree, achieving 96.82% accuracy for driver behavior classification. Deployed on Raspberry PI.</p>
+                        <div class="mt-2 space-x-2">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Python</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MediaPipe</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Computer Vision</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Real-time AI</span>
+                        </div>
+                    </div>
+                    <!-- Project Item -->
+                    <div class="project-item">
+                        <p class="font-semibold text-lg text-gray-800">Attention Head Importance Analysis in Transformers</p>
+                        <p class="text-gray-600 text-sm">Academic Project</p>
+                        <p class="text-gray-700 mt-2">Analyzed attention head importance in T5 transformer models across different NLP tasks (summarization and translation) using confidence analysis method. Computed gradient-based importance scores and performed selective pruning of less critical heads, demonstrating varying significance of attention heads for different tasks with visualizations showing BLEU score vs sparsity relationships.</p>
+                        <div class="mt-2 space-x-2">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">PyTorch</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Transformers</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Attention Mechanisms</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Model Pruning</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">T5</span>
+                        </div>
+                    </div>
+                    <!-- Project Item -->
+                    <div class="project-item">
+                        <p class="font-semibold text-lg text-gray-800">Hindi-English Neural Translation</p>
+                        <p class="text-gray-600 text-sm">Academic Project</p>
+                        <p class="text-gray-700 mt-2">Implemented Seq2Seq model using LSTM encoder-decoder with attention mechanism and BPE tokenizer for Hindi-to-English neural machine translation.</p>
+                        <div class="mt-2 space-x-2">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NLP</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">LSTM</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Attention</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Translation</span>
+                        </div>
+                    </div>
+                    <!-- Project Item -->
+                    <div class="project-item">
+                        <p class="font-semibold text-lg text-gray-800"> Post-Training Quantization Analysis</p>
+                        <p class="text-gray-600 text-sm">Academic Project</p>
+                        <p class="text-gray-700 mt-2">Implemented and analyzed post-training quantization techniques on MobileNetV2 for image classification (Rock-Paper-Scissors dataset) using TensorFlow. Compared model efficiency and accuracy before and after quantization, including integer quantization, n-bit clustering, and linear quantization.</p>
+                        <ul class="list-disc pl-6 text-gray-700 mt-2 text-sm">
+                            <li><b>Original Model (Float32):</b> 2,227,715 params, 8.50MB, 80.11% accuracy, 0.1369s inference.</li>
+                            <li><b>Post-Training Integer Quantization (int8):</b> 4.40MB, 71.50% accuracy, 0.0093s inference (14× speedup), 8.5MB → 4.4MB, 7× faster, accuracy drop ~9%.</li>
+                            <li><b>n-bit Clustering Quantization:</b> 2-bit (7.77×), 4-bit (7.73×), 8-bit (6.96×) compression; quantization error (MSE): 2-bit: 76.29, 4-bit: 59.21, 8-bit: 46.66.</li>
+                            <li><b>Linear Quantization (int8/int16):</b> int8: 7.78× compression, 73.12% acc; int16: 3.91× compression, 79.84% acc; minimal performance loss for int16.</li>
+                        </ul>
+                        <div class="mt-2 space-x-2">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">TensorFlow</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MobileNetV2</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Quantization</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Edge AI</span>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Model Compression</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        <footer class="pt-8 border-t text-center text-gray-600">
+            <div class="flex justify-center items-center space-x-6">
+                <a href="mailto:harsh.kumar.25@outlook.com" class="link-style">Email</a>
+                <a href="https://github.com/harsh-kmr" class="link-style">GitHub</a>
+                <a href="https://linkedin.com/in/harsh-kmr" class="link-style">LinkedIn</a>
+                <a href="assets/resume/harsh.pdf" class="link-style" download>Resume PDF</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
